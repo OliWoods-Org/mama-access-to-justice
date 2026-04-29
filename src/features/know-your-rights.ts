@@ -54,7 +54,7 @@ export const RightsCard = z.object({
   magicPhrases: z.array(z.string()).describe("Exact phrases to say"),
   afterwardSteps: z.array(z.string()),
   emergencyContacts: z.array(
-    z.object({ name: z.string(); phone: z.string(); when: z.string() })
+    z.object({ name: z.string(), phone: z.string(), when: z.string() })
   ),
   disclaimer: z.string(),
 });

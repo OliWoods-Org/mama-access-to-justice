@@ -71,7 +71,7 @@ export type ConsumerProtectionResult = z.infer<typeof ConsumerProtectionResult>;
 // Agency database
 // ---------------------------------------------------------------------------
 
-const FEDERAL_AGENCIES: AgencyContact[] = [
+const FEDERAL_AGENCIES: z.infer<typeof AgencyContact>[] = [
   {
     name: "Federal Trade Commission (FTC)",
     role: "Primary federal consumer protection agency",
@@ -208,7 +208,7 @@ function buildFilingPlan(input: ConsumerComplaintInput) {
   return steps;
 }
 
-function getRelevantAgencies(input: ConsumerComplaintInput): AgencyContact[] {
+function getRelevantAgencies(input: ConsumerComplaintInput): z.infer<typeof AgencyContact>[] {
   const agencies = [...FEDERAL_AGENCIES];
   const stateAG = STATE_AG_URLS[input.state];
   if (stateAG) {
